@@ -5,11 +5,11 @@ on:
     branches:
       - main
   pull_request:
-    branches:
-      - main
+  #  branches:
+   #   - main
 
-  schedule:
-    - cron: '*/5 * * * *'
+#  schedule:
+  #  - cron: '*/5 * * * *'
 
 jobs:
   tests:
@@ -43,7 +43,7 @@ jobs:
           composer update --prefer-dist --no-progress
       - name: Run script
         run: |
-          php index.php
+      #    php index.php
         env:
           OCI_REGION: ${{ secrets.OCI_REGION }}
           OCI_USER_ID: ${{ secrets.OCI_USER_ID }}
